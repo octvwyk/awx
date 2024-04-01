@@ -1,0 +1,13 @@
+- name: Check Python Interpreter Enviroment
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Install Non-Custom Python Modules
+      command:
+        cmd: python -c "import sys; print (sys.path)"
+      register: python_path
+  
+  
+    - debug:
+        var: python_path

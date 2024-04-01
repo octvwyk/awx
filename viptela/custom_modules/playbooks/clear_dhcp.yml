@@ -1,0 +1,17 @@
+---
+- name: Secure Login to Git
+  hosts: localhost
+  gather_fact: no
+  vars:
+    directory: /tmp/python_collection/
+- name: Install Non-Custom Python Modules
+  command:
+    cmd: python -m pip install -r /tmp/custom_modules/requirements.txt
+
+- name: Run Python
+
+  ansible.buildin.script:
+
+    executible: python
+    
+    cmd: /tmp/custom_modules/plugins/modules/clr_dhcp_binding_card.py

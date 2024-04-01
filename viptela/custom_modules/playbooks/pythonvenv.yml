@@ -1,0 +1,6 @@
+---
+- name: Run Python code inside virtual enviroment
+  hosts: localhost
+  tasks:
+    - name: Activate virtual enviroment
+      command: "source /var/lib/awx/netw_env/bin/activate"
